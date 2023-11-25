@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "[Environment Variables]"
+echo "Path: $PATH"
+echo "Home: $HOME"
+echo "Current Directory: $PWD"
+
