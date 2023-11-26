@@ -1,0 +1,7 @@
+#!/bin/bash
+#: Title        : vars
+#: Date         : 2023-11-26
+#: Author       : caizhifei2023@gmail.com
+#: Description  : global const variables.
+
+SOURCE_BASE="https://raw.githubusercontent.com/wikod/scripts/main"
