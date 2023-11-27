@@ -4,18 +4,47 @@
 #: Author       : caizhifei2023@gmail.com
 #: Description  : Script utilities for software installation or service configuration on ubuntu server
 
-source "./vars"
+printf "[Environment Variables]\n"
+printf "PATH: $PATH\n"
+printf "HOME: $HOME\n"
+printf "PWD (Current Directory): $PWD\n"
 
-echo "[Environment Variables]"
-echo "Path: $PATH"
-echo "Home: $HOME"
-echo "Current Directory: $PWD"
-echo "SOURCE_BASE: $SOURCE_BASE"
-echo '$#: ' "$#"
-echo '$0: ' "$0"
-echo '$1: ' "$1"
+printf "\n[Positional Parameters]\n"
+printf '$#: %s\n' "$#"
+printf '$0: %s\n' "${0}"
+printf '$1: %s\n' "${1}"
+printf '$2: %s\n' "${2}"
+printf '$3: %s\n' "${3}"
+printf '$4: %s\n' "${4}"
+printf '$5: %s\n' "${5}"
+printf '$6: %s\n' "${6}"
+printf '$7: %s\n' "${7}"
+printf '$8: %s\n' "${8}"
+printf '$9: %s\n' "${9}"
+
+printf "\n[Get Named Positional Parameters]\n"
+while [ $# -gt 0 ]; do
+    key="$1"
+    case ${key} in
+    --name)
+        name="$2"
+        shift 2
+        ;;
+    --age)
+        age="$2"
+        shift 2
+        ;;
+    *)
+        shift
+        ;;
+    esac
+done
+
+printf "name: ${name}; age: ${age}\n"
 
 # %s %c %d %f 都是格式替代符，％s 输出一个字符串，％d 整型输出，％c 输出一个字符，％f 输出实数，以小数形式输出。
 # %-10s 指一个宽度为 10 个字符（- 表示左对齐，没有则表示右对齐），任何字符都会被显示在 10 个字符宽的字符内，如果不足则自动以空格填充，超过也会将内容全部显示出来。
 # %-4.2f 指格式化为小数，其中 .2 指保留2位小数。
 printf "%s %s %d\n" "Hello, World" "!" 123
+
+printf "%s\n" "text01" "text02" "text03"

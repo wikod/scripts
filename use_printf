@@ -1,0 +1,44 @@
+#!/bin/bash
+
+printf "[[printf]]\n"
+printf "\n"
+printf "[Escape Sequences]\n"
+printf "%6s: %s\n" \
+    "\\a" "Alert(bell)" \
+    "\\b" "Backspace" \
+    "\\e" "Escape character" \
+    "\\f" "Form feed" \
+    "\\n" "Newline" \
+    "\\r" "Carriage return" \
+    "\\t" "Horizontal tab" \
+    "\\v" "Vertical tab" \
+    "\\\\" "Backslash" \
+    "\\nnn" "A character specified by one to three octal digits" \
+    "\\xHH" "A character specified by one or two hexadecimal digits" \
+    "%%" "Print \"%\"" \
+    "\\\"" "Print '\"'"
+
+printf "\n"
+printf "[Format Specifiers]\n"
+printf "%6s: %s\n" \
+    "%s" "Prints the literal characters in the argument" \
+    "%b" "Like %s escept that escape sequences in the arguments are translated" \
+    "%d" "Integers are printed with %d, The integer may be specified as a decimal, octal, or hexadecimal number." \
+    "%f" "For decimal fractions or floating-point numbers." \
+    "%e" "Floating-point numbers can be presented in exponential notation using %e." \
+    "%x" "" \
+    "%X" "Integers can be printed in hexadecimal. using %x for lowercase letters or %X for uppercase letters." \
+    "%c" "A character."
+
+printf "\n"
+printf "[Width Specification]\n"
+printf "%6s: %s\n" \
+    "%8s" "Specify 8 characters with. flush right" \
+    "%-8s" "Specify 8 characters with. flush left" \
+    "%04d" "The numbers are padded with leading zeroes to fill the width." \
+    "%8.4s" "A width specifier with a decimal freaction specifies the maximum with of a string." \
+    "%8.4f" "A width specifier with a decimal freaction specifies precision of a floating-point number."
+
+printf "\n"
+printf "[Printing to a Variable]\n"
+printf "printf -v num4 \"%%04d\" 4\n"

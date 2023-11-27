@@ -1,0 +1,41 @@
+#!/bin/bash
+
+printf "[[stream]]\n"
+
+printf "\n"
+printf "[Standard Streams]\n"
+printf "%s: %s\n" \
+    "stdin  (FD: 0)" "Standard input stream." \
+    "stdout (FD: 1)" "Standard output stream." \
+    "stderr (FD: 2)" "Standard error stream."
+
+printf "\n"
+printf "[Redirection]\n"
+printf "%6s: %s\n" \
+    ">" "Write to target stream" \
+    ">>" "Append to target stream." \
+    "<" "Read from input stream."
+
+printf "\n"
+printf "Both standard output and standard error can be redirected on the same line:\n"
+printf "printf \"%s\" 1>FILE 2>ERRORFILE\n" 'test%v\n'
+
+printf "\n"
+printf "Ignore error output:\n"
+printf "printf \"%s\" 1>FILE 2>/dev/null\n" 'test%v\n'
+
+printf "\n"
+printf "Send error message to standard error stream:\n"
+printf "printf \"%s\" 1>FILE 2>&2\n" 'test%v\n'
+
+printf "\n"
+printf "Send both standard output and standard error to same place:\n"
+printf "printf \"%s\" &>FILE\n" 'test%v\n'
+
+printf "\n"
+printf "Read standard input to variables:\n"
+printf "read v1 v2\n"
+
+printf "\n"
+printf "Read first line of file to variables:\n"
+printf "read v1 <file\n"
